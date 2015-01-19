@@ -1,0 +1,61 @@
+<form class="form-horizontal">
+	<legend>Matriculas: {{alumno.nombre}}</legend>
+
+	<input id='search_curso' type="text" name="search_field" placeholder='Filtrar cursos'>
+
+	<fieldset>
+		
+        <table class='table table-striped table-bordered table-condensed matriculas'>
+            <thead>
+                <tr>
+                    <th>
+                        Identificador
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Bodega
+                    </th>
+                    <th>
+                        Profesor
+                    </th>
+                    <th>
+                        Fecha inicio
+                    </th>
+                    <th>
+                        Horario
+                    </th>
+                    <th>
+                        Matricular
+                    </th>
+                </tr>
+            </thead>
+            {{#each opened_cursos}}
+                <tr search='{{identificador}} - {{nombre}} - {{bodega_nombre}} - {{profesor.name}} -             {{timestamp_to_string fecha_inicio}} - {{hora_inicio}} - {{hora_fin}}' >
+                    <td>{{identificador}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{bodega_nombre}}</td>
+                    <td>{{profesor.name}}</td>
+                    <td>{{timestamp_to_string fecha_inicio}}</td>
+                    <td>{{hora_inicio}} - {{hora_fin}}</td>
+                    <td>
+                        <input id='curso_field{{id}}' {{draw_checked id ../matriculas}} value='{{id}}' name='curso' type='checkbox'>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+        <div style='display:none'>
+            {{#each closed_cursos}}
+                <input id='curso_field{{id}}' {{draw_checked id ../matriculas}} value='{{id}}' name='curso' type='checkbox'>
+            {{/each}}
+        </div>
+		
+		<input type="hidden" name="alumno" value="{{alumno.id}}">
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Guardar Matriculas</button>
+			<a href='#alumnos' class="btn">Cancelar</a>
+		</div>
+	</fieldset>
+</form>

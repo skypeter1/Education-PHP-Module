@@ -1,0 +1,4 @@
+INSERT INTO `{db_name}`.`alumnos` (`id`, `cedula`, `nombre`, `apodo`, `telefono`, `celular`, `email`, `direccion`, `version`, `cliente_pac`) VALUES
+(1, '1719842146', 'Isabel Gomez', 'Isa', '3430161', '0994033642', 'coolmaju@gmail.com', 'Juan de Velasco S6-771 y Pedro Porras							\r\n						', '1354827319.46', '1'),
+(2, '9443761', 'Joan Gallego', 'Joan', '123123123', '12312321', 'daneryl@gmail.com', 'Juan de dios martinez							\r\n						', '1356493055.93', '2'),
+(3, '98127398173', 'Alberto', 'Konz', '34567', '09876', 'konz@konz.com', 'Juan de dios martinez							\r\n						', '1356713734', '2');

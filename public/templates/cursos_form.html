@@ -1,0 +1,143 @@
+<form class="form-horizontal">
+  <legend>Curso</legend>
+  <fieldset>
+   
+    <fieldset>
+      <div class="form-column">
+
+        <div class="control-group">
+          <label class="control-label" for="nombre_field">Nombre</label>
+          <div class="controls">
+            <input id='nombre_field' name='nombre' type='text' required="required" value='{{nombre}}'>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="horas_field">Horas</label>
+          {{#if can_modify_hours}}
+          <div class="controls">
+            <input id='horas_field' name='horas' class='integer' required="required" value='{{horas}}'>
+          </div>
+          {{else}}
+          <div class="controls">
+            <input readonly id='horas_field' name='horas' class='integer' required="required" value='{{horas}}'>
+          </div>
+          {{/if}}
+        </div>
+
+        <div class="control-group time">
+          <label class="control-label" for="hora_inicio_field">Hora inicio</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-time"></i></span><input required="required" class='timespan_start masked-time' id='hora_inicio_field' name='hora_inicio' type='text' value='{{hora_inicio}}'>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group time">
+          <label class="control-label" for="hora_fin_field">Hora fin</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-time"></i></span><input required="required" class='timespan_end masked-time' id='hora_fin_field' name='hora_fin' type='text' value='{{hora_fin}}'>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="fecha_inicio_field">Fecha de inicio</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-calendar"></i></span><input class="date_start" data-value="{{translate_date_for_calendar fecha_inicio}}" id='fecha_inicio_field' name='fecha_inicio' type='date' value='{{fecha_inicio}}' required='required'>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="fecha_fin	_field">Fecha de fin</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-calendar"></i></span><input class="date_end" data-value="{{translate_date_for_calendar fecha_fin}}" id='fecha_fin_field' name='fecha_fin' type='date' value='{{fecha_fin}}' required='required'>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-column">
+
+        <div class="control-group">
+          <label class="control-label" for="profesor_field">Profesor</label>
+          <div class="controls">
+            <a class="btn btn-mini btn-info select_profesor" href="#"><i class="icon-pencil icon-white"></i>Seleccionar profesor</a>
+            <input required='required' type="hidden" name="profesor" value='{{#if profesor}}{{profesor.id}}{{/if}}'>
+          </div>
+
+          <div class='well well-small select_profesor'>
+            {{#if profesor}}	
+            <p>{{profesor.name}}</p>
+            <p>{{profesor.email}}</p>
+            {{else}}
+            Sin selecci&oacute;n
+            {{/if}}	
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="producto_pac_field">Producto asociado</label>
+          <div class="controls">
+            <select class='searchable' required="required" id='producto_pac_field' name='producto_pac'>
+              <option value=''>Seleccione...</option>
+              {{draw_select_options pac_products producto_pac}}
+            </select>
+          </div>
+        </div>
+
+        <input name='sucursal' value='{{sucursal}}' type='hidden'>
+
+        <div class="control-group">
+          <label class="control-label" for="estado_field">Estado</label>
+          <div class="controls">
+            <select required="required" id='estado_field' name='estado'>
+              {{draw_select_options estados estado}}
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="cupos_field">Cupos M&iacute;nimo</label>
+          <div class="controls">
+            <input id='cupos_minimo_field' name='cupos_minimo' class='integer' required="required" value='{{cupos_minimo}}'>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="cupos_field">Cupos M&aacute;ximo</label>
+          <div class="controls">
+            <input id='cupos_maximo_field' name='cupos_maximo' class='integer' required="required" value='{{cupos_maximo}}'>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="precio_prematricula_field">Precio prematricula</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon">$</i></span><input id='precio_prematricula_field' class='float' name='precio_prematricula' value='{{precio_prematricula}}'>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+
+
+    <input name='identificador' type='hidden' value='{{identificador}}'>
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="hidden" name="version" value="{{version}}">
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+      <button class="btn btn-success save_and_new">Guardar y crear otro curso</button>
+      <a href='#cursos' class="btn">Cancelar</a>
+    </div>
+  </fieldset>
+</form>

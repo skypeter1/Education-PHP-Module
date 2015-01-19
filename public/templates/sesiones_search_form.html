@@ -1,0 +1,38 @@
+<form class="">
+  <fieldset>
+
+    <input type="text" placeholder='Busqueda global' name="search" class="search-query">
+
+    <input type="hidden" name="estado_off" value="1"> 
+    <input type="hidden" name="estado_on" value="0">
+    <input type="hidden" name="pagado_on" value="0">
+                 
+    <fieldset class="float_right">
+      <label class="btn btn-small btn-danger estado_off" data-estado-validar="1">
+        <i class="icon-ok-circle icon-white" data-icon="estado_off"></i>
+      Por Validar  
+      </label>        
+
+      <label data-estado-validado="0" class="btn btn-small btn-success estado_on">
+        <i data-icon="estado_on" class="icon-remove-circle icon-white"></i>
+        &nbsp;&nbsp;Validadas 
+      </label>
+      <label class="btn btn-small btn-warning pagado_on" data-pagado="1">
+        <i class="icon-remove-circle icon-white" data-icon="pagado_on"></i>
+          Pagadas
+      </label>
+
+      <button type="submit" class="btn btn-info">
+        <i class="icon-search icon-white"></i>
+      </button>  
+ 
+      {{#if can_create}}
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="btn btn-small btn-primary new" href="{{ url }}">
+        <i class="icon-plus icon-white"></i>&nbsp;&nbsp;{{ label }}
+      </a>
+      {{/if}}
+    </fieldset>
+
+  </fieldset>
+</form>

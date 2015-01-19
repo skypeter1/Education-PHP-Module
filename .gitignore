@@ -1,0 +1,10 @@
+/application/third_party/selenium_tests/config.php
+/application/logs/*
+/user_guide/*
+/application/cache/*
+/application/helpers/*
+/application/hooks/*
+/application/language/*
+/application/libraries/*
+/application/models/*
+/application/cache/*

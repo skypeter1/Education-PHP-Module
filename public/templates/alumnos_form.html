@@ -1,0 +1,100 @@
+<form class="form-horizontal">
+	<legend>Alumno</legend>
+	<fieldset>
+		
+		<fieldset>
+			<div class="form-column">
+
+				<div class="control-group">
+					 <label class="control-label" for="cliente_pac_field">Cliente asociado</label>
+					 	<div class="controls">
+					     <select class='searchable' required="required" id='cliente_pac_field' name='cliente_pac'>
+					     	<option value=''>Seleccione...</option>
+					        {{draw_select_options pac_clients cliente_pac}}
+					     </select>
+					 </div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="cedula_field">Identificaci&oacute;n</label>
+					<div class="controls">
+						<input id='cedula_field' name='cedula' type='text' required="required" value='{{cedula}}'>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="nombre_field">Nombre</label>
+					<div class="controls">
+						<input id='nombre_field' name='nombre' type='text' required="required" value='{{nombre}}'>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="apodo_field">Apodo</label>
+					<div class="controls">
+						<input id='apodo_field' name='apodo' type='text' value='{{apodo}}'>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="fecha_nacimiento_field">Fecha de nacimiento</label>
+					<div class="controls">
+						<div class="input-prepend">
+				        	<span class="add-on"><i class="icon-calendar"></i></span><input data-value="{{translate_date_for_calendar fecha_nacimiento}}" id='fecha_nacimiento_field' name='fecha_nacimiento' type='date' value='{{fecha_nacimiento}}'>
+						</div>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="edad_field">Edad</label>
+					<div class="controls">
+						<input id='edad_field' name='edad' type='text' value='{{edad}}'>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-column">
+				
+				<div class="control-group">
+					<label class="control-label" for="telefono_field">Tel&eacute;fono</label>
+					<div class="controls">
+						<input id='telefono_field' name='telefono' type='text' value='{{telefono}}'>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="celular_field">Celular</label>
+					<div class="controls">
+						<input id='celular_field' name='celular' type='text' value='{{celular}}'>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="email_field">E-mail</label>
+					<div class="controls">
+						<input id='email_field' name='email' type='email' value='{{email}}'>
+					</div>
+				</div>				
+
+				<div class="control-group">
+					<label class="control-label" for="direccion_field">Direcci&oacute;n</label>
+					<div class="controls">
+						<textarea id='direccion_field' name='direccion'>{{direccion}}</textarea>
+					</div>
+				</div>
+
+			</div>
+		</fieldset>
+
+		
+		<input type="hidden" name="id" value="{{id}}">
+		<input type="hidden" name="version" value="{{version}}">
+
+		<div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button class="btn btn-success save_and_new">Guardar y crear otro alumno</button>
+			<a href='#alumnos' class="btn">Cancelar</a>
+		</div>
+	</fieldset>
+</form>

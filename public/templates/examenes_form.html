@@ -1,0 +1,92 @@
+<form class="form-horizontal examenes">
+	<legend>Actividad</legend>
+	<fieldset>
+		
+		<fieldset>
+			<div class="form-column">
+				<div class="control-group">
+					<label class="control-label" for="titulo_field">T&iacute;tulo</label>
+					<div class="controls">
+						<input id='titulo_field' name='titulo' type='text' required="required" value='{{titulo}}'>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="fecha_field">Fecha</label>
+					<div class="controls">
+						<div class="input-prepend">
+				        	<span class="add-on"><i class="icon-calendar"></i></span><input data-value="{{translate_date_for_calendar fecha}}" id='fecha_field' name='fecha' type='date' value='{{fecha}}' required='required'>
+						</div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					 <label class="control-label" for="categoria_field">Categoria</label>
+					 	<div class="controls">
+					     <select required="required" id='categoria_field' name='categoria'>
+					     	<option value=''>Seleccione...</option>
+					        {{draw_select_options categorias_options categoria}}
+					     </select>
+					 </div>
+				</div>
+
+			</div>
+
+			<div class="form-column">
+
+			{{#if administrador}}
+				<div class="control-group">
+					<label class="control-label" for="profesor_field">Profesor</label>
+					<div class="controls">
+	                    <a class="btn btn-mini btn-info select_profesor" href="#"><i class="icon-pencil icon-white"></i>Seleccionar profesor</a>
+	                     <input required='required' class='json' type="hidden" name="profesor" value='{{#if profesor}}{{toJSON profesor}}{{/if}}'>
+					</div>
+
+					<div class='well well-small select_profesor'>
+		                {{#if profesor}}	
+		                    <p>{{profesor.name}}</p>
+		                    <p>{{profesor.email}}</p>
+		                {{else}}
+		                    Sin selecci&oacute;n
+		                {{/if}}	
+	                </div>
+				</div>
+			{{/if}}
+
+				<div class="control-group">
+					<label class="control-label" for="paciente_field">Curso</label>
+					<div class="controls">
+	                    <a class="btn btn-mini btn-info select_curso" href="#"><i class="icon-pencil icon-white"></i>Seleccionar curso</a>
+	                     <input required='required' class='json' type="hidden" name="curso" value='{{#if curso}}{{toJSON curso}}{{/if}}'>
+					</div>
+
+					<div class='well well-small select_curso'>
+		                {{#if curso}}	
+		                    <p>{{curso.identificador}}</p>
+		                    <p>{{curso.nombre}}</p>
+		                {{else}}
+		                    Sin selecci&oacute;n
+		                {{/if}}	
+	                </div>
+				</div>
+
+			</div>
+		</fieldset>
+
+		<div class="control-group">
+			<label class="control-label" for="observaciones_field">Observaciones</label>
+			<div class="controls">
+				<textarea id='observaciones_field' name='observaciones' type='text'>{{observaciones}}</textarea>
+			</div>
+		</div>
+		
+		<input type="hidden" name="id" value="{{id}}">
+		<input type="hidden" name="version" value="{{version}}">
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Guardar cambios</button>
+			<button class="btn btn-success save_and_new">Guardar y crear otra</button>
+			<a href='#examenes' class="btn">Cancelar</a>
+		</div>
+	</fieldset>
+</form>

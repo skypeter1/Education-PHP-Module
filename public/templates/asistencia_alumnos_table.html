@@ -1,0 +1,64 @@
+<legend>Asistencia alumno: {{alumno.nombre}}</legend>
+
+<table class='table table-bordered table-condensed tablesorter asistencia'>
+	<thead>
+		<tr>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Curso
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Asistio
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Observaciones
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Fecha
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Hora&nbsp;inicio
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Hora&nbsp;fin
+				</a>
+			</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		{{#each collection}}
+			<tr {{#compare estado_asistencia ../no_asistio}} class='fail' {{/compare}}>
+				<td>{{identificador}} - {{nombre}}</td>
+				<td>{{estado_asistencia}}</td>
+				<td>{{observaciones}}</td>
+				<td>{{fecha}}</td>
+				<td>{{hora_inicio}}</td>
+				<td>{{hora_fin}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+	
+</table>

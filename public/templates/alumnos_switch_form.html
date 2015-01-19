@@ -1,0 +1,56 @@
+<form class="form-horizontal switch-alumnos">
+	<fieldset>
+
+	<legend>Alumnos por curso</legend>
+		
+		<fieldset class='form-container'>
+			<div class="form-column">
+				<div class="control-group">
+					<label class="control-label" for="curso_left_field">Curso</label>
+					<div class="controls">
+						<select class='searchable' name="curso_left" id='curso_left_field'>
+							{{draw_select_options cursos left_curso_id}}
+						</select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="alumnos_left_field">Alumnos</label>
+					<div class="controls">
+						<select multiple='multiple' class='multiple' name="alumnos_left" id='alumnos_left_field'>
+							{{#each alumnos_left}}
+								<option value='{{id}}'>{{nombre}} - {{cedula}}</option>
+							{{/each}}
+						</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-column">
+				<div class="control-group">
+					<label class="control-label" for="curso_right_field">Curso</label>
+					<div class="controls">
+						<select class='searchable' name="curso_right" id='curso_right_field'>
+							{{draw_select_options cursos right_curso_id}}
+						</select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="alumnos_right_field">Alumnos</label>
+					<div class="controls">
+						<select multiple='multiple' class='multiple' name="alumnos_right" id='alumnos_right_field'>
+							{{#each alumnos_right}}
+								<option value='{{id}}'>{{nombre}} - {{cedula}}</option>
+							{{/each}}
+						</select>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Guardar Matriculas</button>
+		</div>
+	</fieldset>
+</form>

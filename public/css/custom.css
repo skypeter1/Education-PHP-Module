@@ -1,0 +1,292 @@
+form.form-horizontal.switch-alumnos .form-container {
+  margin-left:100px;
+}
+
+form.form-horizontal.switch-alumnos label {
+  display:block;
+  float:none;
+  text-align:left;
+  margin-left:20px;
+}
+
+.custom-feedback {
+  position:absolute;
+}
+
+.switch_buttons {
+  position:absolute;
+  left:440px;
+  top:200px;
+}
+
+.switch_buttons a {
+  display:block;
+  margin-bottom:10px;
+}
+
+.switch-alumnos select {
+  width:300px;
+}
+
+.switch-alumnos select.multiple {
+  height:300px;
+}
+
+form.sesiones textarea,
+form.examenes textarea {
+  width:635px;
+  height:80px;
+}
+
+form input.masked-time {
+  font-size:1.4em;
+  width:100px;
+  text-align:center;
+}
+
+form .form-actions-top {
+  position:absolute;
+  top:0;
+  left:180px;
+}
+
+.custom-modal {
+  padding:5px 15px 0 15px;
+  min-height:300px;
+  width:900px;
+  margin-left:-450px !important;
+}
+
+fieldset.clear {
+  clear:both;
+}
+
+#content, #header {
+  min-width:1050px;
+}
+
+#user-button {
+  right:0;
+}
+
+.modal-backdrop, .modal-backdrop.fade.in {
+  opacity:1;
+}
+
+span.label.nota {
+  display:block;
+  text-align:center;
+  width:20px;
+  float:left;
+  margin-right:2px;
+}
+
+span.label.nota:hover {
+  cursor: help;
+}
+
+table.notas input.peso {
+  margin-top:8px;
+  margin-left:10px;
+  width:50px;
+}
+
+.nota_final span.label {
+  display:block;
+  text-align:center;
+}
+
+th.fail, tr.fail {
+  background:#F2DEDE
+}
+
+th.total_percent {
+  text-align:center;
+}
+
+th.total_percent div {
+  width:80px;
+  margin:auto;
+}
+
+th.fail span {
+  color:red;
+}
+
+td.actions {
+  width:110px;
+}
+
+.buttons.notas {
+  margin-bottom:5px;
+}
+
+ul.notas.thumbnails li, 
+ul.matriculas.thumbnails li,
+ul.asistencia.thumbnails li{
+  width:200px;    
+}
+
+ul.asistencia.thumbnails li div.asistencia{
+    height:200px;
+}
+
+ul.matriculas.thumbnails li .thumbnail{
+  height:100px;
+  position:relative;
+}
+
+ul.asistencia.thumbnails li .thumbnail select {
+  width:120px;
+}
+
+ul.matriculas.thumbnails li .thumbnail input {
+  position:absolute;
+  top:5px;
+  right:10px;
+}
+
+ul.matriculas.thumbnails li label {
+  cursor:pointer;
+}
+
+ul.notas.thumbnails li .thumbnail,
+ul.asistencia.thumbnails li .thumbnail {
+  padding-bottom:15px;
+}
+
+ul.notas.thumbnails li .thumbnail h4,
+ul.asistencia.thumbnails li .thumbnail h4 {
+  margin-bottom:5px;
+  text-align:center;
+}
+
+ul.notas.thumbnails li input {
+  width:50px;
+  text-align:right;
+}
+
+ul.notas.thumbnails li textarea, ul.asistencia.thumbnails li textarea {
+  width:140px;
+}
+
+#search_curso {
+  margin-bottom:20px;
+}
+
+
+table tr.success {
+  background:#D6E9C6;
+}
+
+.well-small p {
+  margin-bottom:0;
+}
+
+.well-small {
+  clear:both;
+  width:200px;
+  height:50px;
+  margin-left:150px;  
+  cursor: pointer; 
+  margin-bottom:0;
+  padding:5px;
+  border:1px solid #BCE8F1;
+  color:#777;
+}
+
+.well-full {
+  border: 1px solid #BCE8F1;
+  color: #777;
+  clear: both;
+  cursor: pointer;
+  height: 6em;
+  margin: 0 0 0 13.5em;
+  padding: 5px;
+  width: 48.7em;
+}
+
+td.validation span {
+  cursor:pointer;
+}
+
+.control-group.alumno.thumbnail {
+  height:200px;
+}
+
+.control-group.alumno.thumbnail h4 {
+  height:70px;
+}
+
+form.report-cursos select {
+  margin-right:10px;
+  margin-bottom:10px;
+}
+
+.titulo_reporte {
+  display: none;
+}
+
+.none { display: none !important; }
+
+.font-normal { font-weight: normal; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-bold { font-weight: bold; }
+.text-middle { vertical-align: middle !important; }
+
+label.wrapper {
+  margin: -0.2em 2em 0 0;
+  padding-top: 5px;
+  text-align: right;
+  width: auto;
+}
+label.wrapper input[type='checkbox'] {
+  margin: -0.1em 0.5em 0 0;
+  padding: 0;
+}
+
+.float_right { float: right; }
+.float_left { float: left; }
+
+div.form_wrapper { min-height: 5em; }
+
+.cursor-hand { cursor: pointer; }
+
+form.options-search label {
+  cursor: pointer;
+}
+form.options-search label input[type='radio'] {
+  position: relative;
+  top: -0.2em;
+}
+
+.display-inline { display: inline; }
+
+.label_,
+.label_0 {
+  background-color: #B94A48;
+}
+.label_true,
+.label_1 {
+  background-color: #468847;
+}
+.icon-box {
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+  vertical-align: text-top;
+  width: 14px;
+}
+.icon_estado_,
+.icon_estado_0 {
+  background: transparent url("img/glyphicons-halflings-white.png") no-repeat -312px 0;
+}
+.icon_estado_true,
+.icon_estado_1 {
+  background: transparent url("img/glyphicons-halflings-white.png") no-repeat -288px 0;
+}
+
+.btn-submit {
+  margin-right: 5em;
+}

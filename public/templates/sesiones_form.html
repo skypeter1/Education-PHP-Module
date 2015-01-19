@@ -1,0 +1,196 @@
+<form class="form-horizontal sesiones">
+	<legend>Sesi&oacute;n</legend>
+	<fieldset>
+		<fieldset>
+			<div class="form-column">
+
+				<div class="control-group">
+					<label class="control-label" for="fecha_field">Fecha</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-calendar"></i></span><input data-value="{{translate_date_for_calendar fecha}}" id='fecha_field' name='fecha' type='date' value='{{fecha}}' required='required'>
+						</div>
+					</div>
+				</div>
+
+				<div class="control-group time">
+					<label class="control-label" for="hora_inicio_field">Hora inicio</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-time"></i></span><input required="required" class='timespan_start masked-time' id='hora_inicio_field' name='hora_inicio' type='text' value='{{hora_inicio}}'>
+						</div>
+					</div>
+				</div>
+
+				<div class="control-group time">
+					<label class="control-label" for="hora_fin_field">Hora fin</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-time"></i></span><input required="required" class='timespan_end masked-time' id='hora_fin_field' name='hora_fin' type='text' value='{{hora_fin}}'>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="form-column">
+				{{#if is_admin}}
+					<div class="control-group">
+						<label class="control-label" for="profesor_field">Profesor</label>
+						<div class="controls">
+		                    <a class="btn btn-mini btn-info select_profesor" href="#"><i class="icon-pencil icon-white"></i>&nbsp;Seleccionar profesor</a>
+		                     <input class='json' type="hidden" name="profesor" value='{{#if profesor}}{{toJSON profesor}}{{/if}}'>
+						</div>
+
+						<div class='well well-small select_profesor'>
+			                {{#if profesor}}
+			                    <p>{{profesor.name}}</p>
+			                    <p>{{profesor.email}}</p>
+			                {{else}}
+			                    Sin selecci&oacute;n
+			                {{/if}}
+		                </div>
+					</div>
+				{{else}}
+	      			{{#if is_admin_director}}
+						<div class="control-group">
+							<label class="control-label" for="profesor_field">Profesor</label>
+							<div class="controls">
+			                    <a class="btn btn-mini btn-info select_profesor" href="#"><i class="icon-pencil icon-white"></i>&nbsp;Seleccionar profesor</a>
+			                     <input class='json' type="hidden" name="profesor" value='{{#if profesor}}{{toJSON profesor}}{{/if}}'>
+							</div>
+
+							<div class='well well-small select_profesor'>
+				                {{#if profesor}}
+				                    <p>{{profesor.name}}</p>
+				                    <p>{{profesor.email}}</p>
+				                {{else}}
+				                    Sin selecci&oacute;n
+				                {{/if}}
+			                </div>
+						</div>
+						{{else}}
+							<div class="control-group">
+								<label class="control-label" for="sin_profesor_field">Sin profesor</label>
+								<div class="controls">
+				          <input id='sin_profesor_field' type="checkbox" name="sin_profesor"
+                    value='1' {{#if sin_profesor}} checked="checked" {{/if}}>
+								</div>
+							</div>
+					{{/if}}
+				{{/if}}
+
+			</div>
+
+		</fieldset>
+
+    <div class="control-group">
+      <label class="control-label" for="paciente_field">Curso</label>
+      <div class="controls">
+        <a class="btn btn-mini btn-info select_curso" href="#">
+          <i class="icon-pencil icon-white"></i>&nbsp;Seleccionar curso
+        </a>
+        <input required='required' class='json' type="hidden" name="curso" value='{{#if curso}}{{toJSON curso}}{{/if}}'>
+      </div>
+
+      <div class='well well-full select_curso'>
+        {{#if curso}}
+        <p class="text-bold">{{ curso.identificador }}</p>
+        <p>{{curso.nombre}}</p>   
+<!--        <p>{{ curso.sessions_avail }} horas disponibles ({{ curso.horas }} m&aacute;ximo)</p>-->
+            <p>{{ curso.hours_avail }} horas disponibles ({{ curso.horas }} m&aacute;ximo)</p>
+        {{else}}    
+        Sin selecci&oacute;n 
+        {{/if}}
+      </div>
+    </div>
+
+		<div class="control-group">
+			<label class="control-label" for="observaciones_field">Observaciones</label>
+			<div class="controls">
+				<textarea id='observaciones_field' name='observaciones' type='text'>{{observaciones}}</textarea>
+			</div>
+		</div>
+
+		{{#if is_admin}}
+			<div class="control-group">
+				<label class="control-label" for="incidencias_field">Incidencias</label>
+				<div class="controls">
+					<textarea id='incidencias_field' name='incidencias' type='text'>{{incidencias}}</textarea>
+				</div>
+			</div>
+
+	      <div class="control-group">
+					<label class="control-label" for="tarifa_field">Tarifa</label>
+	        <div class="controls">
+	          <select name="tarifa" id="tarifa_field">
+	            {{draw_select_options tarifas tarifa}}
+	          </select>
+	        </div>
+	      </div>
+      	{{else}}
+      	{{#if is_admin_director}}
+      			<div class="control-group">
+				<label class="control-label" for="incidencias_field">Incidencias</label>
+				<div class="controls">
+					<textarea id='incidencias_field' name='incidencias' type='text'>{{incidencias}}</textarea>
+				</div>
+			</div>
+
+	      <div class="control-group">
+					<label class="control-label" for="tarifa_field">Tarifa</label>
+	        <div class="controls">
+	          <select name="tarifa" id="tarifa_field">
+	            {{draw_select_options tarifas tarifa}}
+	          </select>
+	        </div>
+	      </div>
+      	{{/if}}
+
+	{{/if}} 
+          
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="hidden" name="version" value="{{version}}">
+    <input type="hidden" name="estado" value="{{estado}}">
+    <input type="hidden" name="pagado" value="{{pagado}}">
+
+    <div id="alert_danger" class="none">
+      <h3>Alerta!</h3>
+      <br>
+      <p>
+        Ha sobrepasado el n&uacute;mero de horas permitidas <strong>({{ curso.horas }})</strong> para el curso seleccionado.&nbsp;<br>
+        Por favor comuniquese con Administraci&oacute;n.
+      </p>
+    </div>
+    <div id="alert_incorrect_hours" class="none">
+      <h3>Alerta!</h3>
+      <br>
+      <p>  
+        El formato de horas es incorrecto<br>
+        Por favor verifique las horas indicadas.
+      </p> 
+    </div>
+  
+    <div class="form-actions">
+            {{#if is_admin}}      
+                {{#if estado}}
+                    {{#if pagado}}     
+                    {{else}} 
+                        <button type="button" class="btn btn-primary btn_go">Guardar cambios</button>
+                        <a href='#' class="btn btn-success-cancel invalidate_sesion">Invalidar sesi&oacute;n</a>
+                    {{/if}}
+                {{else}}
+                    <button type="button" class="btn btn-primary btn_go">Guardar cambios</button>    
+                    <a href='#' class="btn btn-success validate_sesion">Validar sesi&oacute;n</a>
+		{{/if}}
+                {{else}}      
+                    <button type="button" class="btn btn-primary btn_go">Guardar cambios</button>
+                {{/if}}
+            
+	<a href='#sesiones' class="btn">Cancelar</a>   
+    </div>
+	</fieldset>
+</form>

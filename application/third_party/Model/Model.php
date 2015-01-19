@@ -1,0 +1,21 @@
+<?php
+require_once dirname(__FILE__).'/../../../system/core/Model.php';
+require_once dirname(__FILE__).'/../Exceptions/Exceptions.php';
+require_once dirname(__FILE__).'/classes/Domain.php';
+require_once dirname(__FILE__).'/classes/ReferenceDomain.php';
+require_once dirname(__FILE__).'/classes/Join.php';
+require_once dirname(__FILE__).'/classes/Model.php';
+require_once dirname(__FILE__).'/classes/ReferenceModel.php';
+require_once dirname(__FILE__).'/classes/Entity.php';
+require_once dirname(__FILE__).'/classes/EntityCollection.php';
+require_once dirname(__FILE__).'/classes/Validator.php';
+require_once dirname(__FILE__).'/classes/Response.php';
+require_once dirname(__FILE__).'/classes/Filter.php';
+require_once dirname(__FILE__).'/classes/Concatenation.php';
+require_once dirname(__FILE__).'/classes/Order.php';
+require_once dirname(__FILE__).'/classes/Paginator.php';
+require_once dirname(__FILE__).'/classes/Search.php';
+require_once dirname(__FILE__).'/classes/PostToSearch.php';
+require_once dirname(__FILE__).'/classes/JsonToEntity.php';
+require_once dirname(__FILE__).'/../Auth/Auth.php';
+require_once dirname(__FILE__).'/../ActivityLog/ActivityLog.php';

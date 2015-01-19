@@ -1,0 +1,33 @@
+<form class="form-horizontal">
+  <fieldset>
+
+    <legend>Notas - {{examen.titulo}} / {{examen.curso.identificador}} - {{examen.curso.nombre}}</legend>
+
+    <ul class="thumbnails notas">
+      {{#each alumnos}}
+      <li>
+      <div class="control-group alumno thumbnail">
+        <div class="controls caption">
+          <h4>{{nombre}} <br/>{{cedula}}</h4>
+
+          <div class="input-append">
+            <input type="text" name="nota" class="integer" id='nota{{id}}' value='{{nota}}'><span class="add-on">/100</span>
+          </div>
+          <label for="observaciones{{id}}">Observaciones</label>
+
+          <textarea name="observaciones" id='observaciones{{id}}' >{{observaciones}}</textarea>
+
+          <input type="hidden" value="{{id}}" name='alumno'>
+
+        </div>
+      </div>
+      </li>
+      {{/each}}
+    </ul>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Guardar Notas</button>
+      <a href='#examenes' class="btn">Cancelar</a>
+    </div>
+  </fieldset>
+</form>

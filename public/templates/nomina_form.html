@@ -1,0 +1,75 @@
+<form class="form-horizontal report-cursos">
+  <fieldset>
+ 
+    <div class="form-column">
+      <div class="control-group">
+        <div class="controls">
+          <select name="profesor" id="profesor">  
+            <option value="">Seleccionar Profesor</option>
+            {{#object_each profesores}}
+            <option value="{{value.id}}">{{value.name}}</option>
+            {{/object_each}}
+          </select>
+        </div> 
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <select name="identificador" id="identificador"> 
+            <option value="">Seleccionar Curso</option>
+            {{#each cursos}}
+            <option value="{{ identificador }}">{{ identificador }} / {{ nombre }}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-column">
+      <div class="control-group">
+        <label class="control-label" for="fecha_desde_field">Fecha Desde</label>
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on">
+              <i class="icon-calendar"></i>
+            </span>
+            <input required="required" data-value="{{translate_date_for_calendar fecha}}" id='fecha_desde_field' name='fecha_desde' type='date' value='{{fecha}}'>
+          </div> 
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="fecha_hasta_field">Fecha Hasta</label>
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on">
+              <i class="icon-calendar"></i>
+            </span>
+            <input required="required" data-value="{{translate_date_for_calendar fecha}}" id='fecha_hasta_field' name='fecha_hasta' type='date' value='{{fecha}}' >
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <input type="text" placeholder='Busqueda global' name="search" class="search-query">
+
+    <br><br>
+
+    <label class="wrapper">
+      <input type="checkbox" name="detailed" value="1" checked>Detallado
+    </label>
+
+    <button type="submit" class="btn btn-info">
+      <i class="icon-search icon-white"></i>&nbsp;BUSCAR
+    </button>
+
+    <a class="btn btn-info export_csv" href="#">
+      <i class="icon-download icon-white"></i>&nbsp;DESCARGAR
+    </a>
+
+    <input type="hidden" name="export_to_csv">
+ 
+  </fieldset>
+</form>

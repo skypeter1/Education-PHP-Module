@@ -1,0 +1,58 @@
+<legend>Historico: {{alumno.nombre}}</legend>
+
+<table class='table table-bordered table-condensed tablesorter asistencia'>
+	<thead>
+		<tr>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Curso
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Nota Final
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					% Asistencia
+				</a>
+			</th>
+
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Fecha Fin 
+				</a>
+			</th>
+      
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+          Sucursal
+				</a>
+			</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		{{#each collection}}
+			<tr>
+				<td>{{identificador}} - {{nombre}}</td>
+				<td>{{nota_final}}</td>
+				<td>{{asistencia}} %</td>
+				<td>{{timestamp_to_string fecha_fin}}</td>
+				<td>{{sucursal}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+	
+</table>

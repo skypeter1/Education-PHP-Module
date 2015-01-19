@@ -1,0 +1,48 @@
+<form class="form-horizontal sesiones">
+  <legend>Rol</legend>
+  <fieldset>
+
+    {{#if id}}
+    <div class="control-group">
+      <label class="control-label" for="username_field"></label>
+      <div class="controls">
+        <h2>{{username}}</h2>
+        <input type="hidden" name="username" value="{{username}}">
+      </div>
+    </div>
+    {{else}}
+    <div class="control-group">
+      <label class="control-label" for="username_field">Usuario del pac</label>
+      <div class="controls">
+        <select class='searchable' required="required" id='username_field' name='username'>
+          <option value=''>Seleccione...</option>
+          {{draw_select_options pac_users username}}
+        </select>
+      </div>
+    </div>
+    {{/if}}
+
+
+    <div class="control-group">
+      <label class="control-label" for="rol_field">Rol asignado</label>
+      <div class="controls">
+        <select required="required" id='rol_field' name='rol'>
+          <option value=''>Seleccione...</option>
+          {{draw_select_options roles rol}}
+        </select>
+      </div>
+    </div>
+
+		<input type="hidden" name="id" value="{{id}}">
+		<input type="hidden" name="version" value="{{version}}">
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+      <button class="btn btn-success save_and_new">Guardar y crear otro</button>
+      <a href='#roles' class="btn">Cancelar</a>
+    </div>
+
+  </fieldset>
+</form>
+
+

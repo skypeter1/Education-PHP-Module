@@ -1,0 +1,92 @@
+<form class="form-horizontal sesiones">
+	<legend>Usuario</legend>
+	<fieldset>
+		
+		<fieldset>
+			
+            {{#if admin}}				
+			<div class="form-column">
+				<div class="control-group">
+					 <label class="control-label" for="proveedor_pac_field">Proveedor asociado</label>
+					 	<div class="controls">
+					     <select class='searchable' required="required" id='proveedor_pac_field' name='proveedor_pac'>
+					     	<option value=''>Seleccione...</option>
+					     	{{draw_select_options proveedores proveedor_pac}}
+					     </select>
+					 </div>
+				</div>
+
+
+				<div class="control-group">
+					<label class="control-label" for="price_field">Precio/hora</label>
+					<div class="controls">
+						<input id='price_field' name='price' class='float' required="required" value='{{price}}'>
+					</div>
+				</div>
+        
+				<div class="control-group">
+					<label class="control-label" for="weekend_price_field">Precio fin de semana</label>
+					<div class="controls">
+						<input id='weekend_price_field' name='weekend_price' class='float' required="required" value='{{weekend_price}}'>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="out_price_field">Precio fuera academia</label>
+					<div class="controls">
+						<input id='out_price_field' name='out_academy_price' class='float' required="required" value='{{out_academy_price}}'>
+					</div>
+				</div>
+
+            </div>
+            {{/if}}
+
+			<div class="form-column">
+                {{#if admin}}				
+				<div class="control-group">
+					<label class="control-label" for="email_field">E-mail</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-envelope"></i></span><input id='email_field' name='email' type='email' required="required" value='{{email}}'>
+						</div>
+					</div>
+				</div>
+                {{/if}}
+				
+				<div class="control-group">
+				<label class="control-label" for="password_field">Contraseña</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-lock"></i></span><input id='password_field' {{#unless id}}required='required'{{/unless}} type='password' class='password' name='password' type="text" value='{{password}}'>
+						</div>
+					</div>
+				</div>
+						
+				<div class="control-group">
+					<label class="control-label" for="retype_password_field">Repetir contraseña</label>
+					<div class="controls">
+						<div class="input-prepend">
+							<span class="add-on"><i class="icon-lock"></i></span><input id='retype_password_field' type='password' class='retype_password'  name='retype-password' type="text" value='{{retype-password}}'>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</fieldset>
+
+		<input type="hidden" name="rol" value="profesor">
+		<input type="hidden" name="id" value="{{id}}">
+		<input type="hidden" name="version" value="{{version}}">
+		<input id='name_field' name='name' type='hidden' required="required" value='{{name}}'>
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Guardar cambios</button>
+            {{#if admin}}				
+			    <button class="btn btn-success save_and_new">Guardar y crear otro</button>
+			    <a href='#users' class="btn">Cancelar</a>
+            {{/if}}
+		</div>
+	</fieldset>
+</form>
+

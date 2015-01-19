@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `{db_name}`.`pac_users` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`version` VARCHAR( 20 ) NOT NULL,
+`username` VARCHAR( 255 ) NOT NULL,
+`rol` VARCHAR( 55 ) NOT NULL
+);

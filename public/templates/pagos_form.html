@@ -1,0 +1,139 @@
+<form class="form-horizontal">
+  <legend>Pagos</legend>
+  <fieldset>
+
+    <fieldset>
+
+      <div class="form-column">
+        <div class="control-group">
+          <label class="control-label" for="profesor_field">Profesor</label>
+          <div class="controls">
+            <select required="required" id='profesor_field' name='profesor'>
+              <option value=''>Seleccione...</option>
+              {{draw_select_options profesores profesor}}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-column">
+        <div class="control-group">
+          <label class="control-label" for="bodega_field">Bodega</label>
+          <div class="controls">
+            <select required="required" id='bodega_field' name='bodega'>
+              {{draw_select_options bodegas bodega}}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-column">
+        <div class="control-group">
+          <label class="control-label" for="product_field">Producto pac</label>
+          <div class="controls">
+            <select class='searchable' required="required" id='product_field' name='product'>
+              {{draw_select_options productos product}}
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-column">
+          <div class="control-group">
+            <label class="control-label" for="type_search_curso">Buscar Curso</label>
+            <div class="controls">
+              <input type="text" id="type_search_curso">
+            </div>
+          </div>
+      </div>
+
+      {{#if sesiones}}
+      <fieldset class='clear'>
+        <legend>Sesiones a pagar</legend>
+        <label for="select_all" class="wrapper cursor-hand float_left">
+          <input type="checkbox" id="select_all" value="1">&nbsp;Seleccionar Todos
+        </label>
+
+        <div class="float_right">
+          <h4 class="display-inline font-normal">
+            Total Horas:&nbsp;<span id="total_hours" class="text-bold"></span>
+            &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+          </h4>
+
+          <h4 class="display-inline font-normal">
+            Total Sesiones:&nbsp;<span id="total_sessions" class="text-bold">{{ sesiones.length }}</span>
+          </h4>
+        </div>
+
+        <br><hr>
+
+        <table class='table table-striped table-bordered table-condensed'>
+          <thead>
+            <tr>
+              <th class='center acciones'>Pagar</th>
+
+              <th>
+                Fecha
+              </th>
+
+              <th>
+                Hora inicio
+              </th>
+
+              <th>
+                Hora fin
+              </th>
+
+              <th>
+                Curso
+              </th>
+
+              <th>
+                Profesor Curso
+              </th>
+
+              <th>
+                Profesor
+              </th>
+
+              <th>
+                Validado
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+          {{#each ../sesiones}}
+          <tr data-curso="{{curso.identificador}} - {{curso.nombre}}" class="">
+            <td class="center acciones">
+              <input type="checkbox"  name='sesion' id='sesion{{id}}_field' value='{{id}}'>   
+            </td>
+            <td>{{fecha}}</td>
+            <td data-hora-ini>{{hora_inicio}}</td>
+            <td data-hora-end>{{hora_fin}}</td>
+            <td>{{curso.identificador}} - {{curso.nombre}}</td>
+            <td>{{profesor_curso}}</td>
+            <td>{{profesor.name}}</td>
+            <td class='center'>
+              {{#if estado}}
+              <span class='label label-success' data='{{id}}'><i class="icon-white icon-ok"></i></span>
+              {{else}}
+              <span class='label label-important' data='{{id}}'><i class="icon-white icon-remove"></i></span>
+              {{/if}}
+            </td>
+          </tr>
+          {{/each}}
+        </fieldset>
+        {{/if}}
+        </tbody>
+      </table>
+
+    </fieldset>
+
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Generar orden de compra</button>
+    </div>
+  </fieldset>
+</form>

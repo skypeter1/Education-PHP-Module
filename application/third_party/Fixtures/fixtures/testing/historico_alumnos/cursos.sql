@@ -1,0 +1,5 @@
+INSERT INTO `{db_name}`.`cursos` (`id`, `nombre`, `horas`, `hora_inicio`, `hora_fin`, `fecha_inicio`, `fecha_fin`, `cupos_minimo`, `cupos_maximo`, `precio_prematricula`, `estado`, `version`, `producto_pac`, `bodega`, `profesor`, `pesos`, `identificador`) VALUES
+(1, 'Benedict 1', 80, '12:45', '14:45', 1355353200, 1357254000, 6, 12, 25, 'Terminado', '1358599169.72', '1', '01', 7, '{"Categoria 4":"80","Categoria 3":"20"}', '000001'),
+(2, 'benedict1', 900, '14:00', '23:00', 1355180400, 1355180400, 6, 12, 25, 'Cursando', '1361881456.83', '2', '01', 6, '{"Categoria 1":"50","Categoria 2":"50"}', '000002'),
+(3, 'benedict1', 68, '12:31', '14:12', 1355374800, 1356843600, 6, 12, 25, 'Prematricula', '1356924566', '1', '02', 5, '', '000003'),
+(4, 'benedict1', 68, '12:31', '14:12', 1355374800, 1356843600, 6, 12, 25, 'Prematricula', '1356924566', '1', '02', 5, '', '000004');

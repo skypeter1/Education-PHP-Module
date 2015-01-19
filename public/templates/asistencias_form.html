@@ -1,0 +1,38 @@
+<form class="form-horizontal">
+	<fieldset>
+
+		<legend>Asistencias</legend>
+		
+		<ul class="thumbnails asistencia">
+			{{#each alumnos}}
+				<li>
+					<div class="control-group asistencia thumbnail">
+					
+						<div class="caption">
+							<h4>{{nombre}} <br/>{{cedula}}</h4>
+							<div class="controls">
+								<select name="estado">
+									{{draw_select_options ../estado_options estado}}
+								</select>
+							</div>
+												
+							<div class="controls">
+								<label for="observaciones{{id}}">Observaciones</label>
+								<textarea name="observaciones" id="observaciones{{id}}">{{observaciones}}</textarea>
+							</div>
+												
+							<input type="hidden" name="sesion" value="{{../sesion}}">
+							<input type="hidden" name="alumno" value="{{id}}">
+						</div>
+					
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+		
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">Guardar Asistencias</button>
+			<a href='#sesiones' class="btn">Cancelar</a>
+		</div>
+	</fieldset>
+</form>

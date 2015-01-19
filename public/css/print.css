@@ -1,0 +1,34 @@
+#header {
+  background:none;
+  display:none;
+}
+
+body {
+  background:none;
+}
+
+#main_menu {
+  display:none;
+}
+
+.table_controls_container, .form-search {
+  display:none;
+}
+
+.table-footer {
+  display:none;
+}
+
+th.acciones, td.acciones {
+  display:none;
+}
+
+.titulo_reporte {
+  text-transform:uppercase;
+  display: block;
+  text-align:center;
+}
+
+.span10 {
+  width:99% !important;
+}

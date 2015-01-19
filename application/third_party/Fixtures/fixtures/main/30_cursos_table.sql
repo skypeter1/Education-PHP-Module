@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS `{db_name}`.`cursos` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`nombre` varchar(255) NOT NULL,
+`horas` int(11) NOT NULL,
+`hora_inicio` varchar(10) NOT NULL,
+`hora_fin` varchar(10) NOT NULL,
+`fecha_inicio` int(10) NOT NULL,
+`fecha_fin` int(10) NOT NULL,
+`cupos_minimo` int(5) NOT NULL,
+`cupos_maximo` int(5) NOT NULL,
+`precio_prematricula` float DEFAULT NULL,
+`estado` varchar(50) NOT NULL,
+`version` varchar(20) NOT NULL,
+`producto_pac` varchar(50) NOT NULL,
+`sucursal` varchar(100) NOT NULL,
+`bodega` varchar(5) NOT NULL,
+`profesor` int(11) NOT NULL,
+`pesos` varchar(255) NOT NULL,
+`identificador` varchar(55) NOT NULL,
+PRIMARY KEY (`id`),
+UNIQUE KEY `identificador` (`identificador`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;

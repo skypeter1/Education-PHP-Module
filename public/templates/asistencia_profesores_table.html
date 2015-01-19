@@ -1,0 +1,83 @@
+<legend>Asistencia profesor: {{profesor.name}}</legend>
+
+<table class='table table-bordered table-condensed tablesorter asistencia'>
+	<thead>
+		<tr>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Curso
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Profesor que dict&oacute;
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Fecha
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Hora&nbsp;inicio
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Hora&nbsp;fin
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Horas
+				</a>
+			</th>
+			<th>
+				<a href='#' class="tableorder">
+					<i class="icon-chevron-up"></i>
+					<i class="icon-chevron-down"></i>
+					Valor
+				</a>
+			</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		{{#each collection}}
+			<tr {{#compare ../profesor.id id_profesor operator="!="}} class='fail' {{/compare}}>
+				<td>{{identificador_curso}} - {{name_curso}}</td>
+				<td>{{name_profesor}}</td>
+				<td>{{timestamp_to_string fecha}}</td>
+				<td>{{hora_inicio}}</td>
+				<td>{{hora_fin}}</td>
+				<td>{{horas}} horas</td>
+				<td>{{valor}} $</td>
+			</tr>
+		{{/each}}
+		<tr class='ignore'>
+			
+			<td><strong>Totales</strong></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><strong>{{total_horas}} horas</strong></td>
+			<td><strong>{{total_valor}} $</strong></td>
+
+		</tr>
+	</tbody>
+	
+</table>

@@ -1,0 +1,49 @@
+<form>
+	<legend>{{overview.curso.identificador}} - {{overview.curso.nombre}} - {{overview.curso.profesor.name}}</legend>
+	
+	<input type="hidden" name='curso' value='{{overview.curso.id}}'>
+	
+	<div class="buttons notas">
+        <button class='btn btn-primary'>Guardar pesos</button>
+        {{#if is_admin}}
+            <button class='btn btn-success'>Cerrar curso</button>
+        {{/if}}
+	</div>
+	
+	<table class='table table-striped table-bordered table-condensed notas'>
+		<thead>
+			<tr>
+				<th>Alumnos</th>
+				<th>% Asistencia</th>
+	
+				{{#each overview.examenes}}
+					<th>{{categoria}} <input class='peso integer' name='{{categoria}}' value='{{peso}}'> %</th>
+				{{/each}}
+					<th class='total_percent'>Nota final <div>(<span>100</span> %)</div></th>
+			</tr>
+		</thead>
+		<tbody>
+	
+			{{#each overview.alumnos}}
+	
+
+				<tr class='alumno'>
+					<td class='alumno' data='{{id}}'>{{nombre}}</td>
+					<td>{{asistencia}} %</td>
+	
+					{{#each notas}}
+						<td>
+							{{#each this}}
+								<span name='{{categoria}}' data-original-title='{{titulo}}' class='label nota {{get_notas_class nota}}'>{{nota}}</span>
+							{{/each}}
+						</td>
+					{{/each}}
+	
+					<td class='nota_final'><span class='label'></span></td>
+				</tr>
+	
+			{{/each}}
+	
+		</tbody>
+	</table>
+</form>

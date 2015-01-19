@@ -1,0 +1,68 @@
+<form class="form-search report-cursos">
+
+  <select name="identificador">
+    <option value="">Seleccionar identificador</option>
+    {{#each cursos}}
+    <option value="{{identificador}}">{{identificador}}</option>
+    {{/each}}
+  </select>
+
+  <select name="profesor">
+    <option value="">Seleccionar profesor</option>
+    {{#object_each profesores}}
+    <option value="{{value.id}}">{{value.name}}</option>
+    {{/object_each}}
+  </select>
+
+  <select name="nombre">
+    <option value="">Seleccionar nombre</option>
+    {{#object_each nombres}}
+    <option value="{{key}}">{{key}}</option>
+    {{/object_each}}
+  </select> 
+
+  <select name="sucursal">
+    <option value="">Seleccionar sucursal</option>
+    {{#object_each sucursales}}
+        {{#if key}}      
+            <option value="{{key}}">{{key}}</option>
+        {{/if}}  
+    
+    {{/object_each}}
+  </select>
+
+  <select name="horario">
+    <option value="">Seleccionar horario</option>
+    {{#object_each horarios}}
+    <option value="{{key}}">{{value}}</option>
+    {{/object_each}}
+  </select>
+
+  <select name="estado">
+    <option value="">Seleccionar estado</option>
+    <option value="Prematricula">Prematricula</option>
+    <option value="Cursando">Cursando</option>
+    <option value="Terminado">Terminado</option>
+  </select>
+
+  <select name="mes">
+    <option value="">Seleccionar mes</option>
+    <option value="1">Enero</option>
+    <option value="2">Febrero</option>
+    <option value="3">Marzo</option>
+    <option value="4">Abril</option>
+    <option value="5">Mayo</option>
+    <option value="6">Junio</option>
+    <option value="7">Julio</option>
+    <option value="8">Agosto</option>
+    <option value="9">Septiembre</option>
+    <option value="10">Octubre</option>
+    <option value="11">Noviembre</option>
+    <option value="12">Diciembre</option>
+  </select>
+
+  <input type="text" placeholder='Busqueda global' name="search" class="search-query">
+
+  <button class="btn" type="submit">Filtrar</button>
+
+</form>

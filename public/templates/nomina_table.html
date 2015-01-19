@@ -1,0 +1,59 @@
+<h2 class='titulo_reporte'>Reporte general de N&oacute;mina</h2>
+
+<form id="nomina_export" action="./users/nomina_csv" method="post" target="_blank">
+  <input type="hidden" id="nomina_export_profesor" name="profesor">
+  <input type="hidden" id="nomina_export_identificador" name="identificador">
+  <input type="hidden" id="nomina_export_fecha_desde" name="fecha_desde">
+  <input type="hidden" id="nomina_export_fecha_hasta" name="fecha_hasta">
+  <input type="hidden" id="nomina_export_search" name="search">
+  <input type="hidden" id="nomina_export_detailed" name="detailed">
+  <input type="hidden" id="nomina_export_export_to_csv" name="export_to_csv" value="1">
+</form>
+
+<table class='table table-striped table-bordered table-condensed'>
+  <thead>
+  <tr>
+
+    <th><a>Nombre</a></th>
+    <th><a>Cursos</a></th>
+    <th><a>Sesiones Validadas</a></th>
+    <th><a>Horas Validadas</a></th>
+    <th><a>Total x Curso</a></th>
+    <th><a>Total x Pagar</a></th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  {{#each collection}}
+  <tr data-entry="{{ name }}">
+    <td rowspan="{{ rowspan }}" class="text-middle text-bold">{{ name }}</td>
+  </tr>
+  {{#each cursos}}
+  <tr data-entry="{{ ../name }}">
+    <td>{{ identificador }}</td>
+    <td class="text-center">{{ valid_sessions }}</td>
+    <td class="text-center">{{ valid_hours }}</td>
+    <td class="text-center">${{ payment }}</td>
+    <td>&nbsp;</td>
+  </tr>
+  {{/each}}
+  <tr data-entry="{{ name }}" class="text-bold">
+    <td>Total:</td>
+    <td class="text-center">{{ qty_sessions }}</td>
+    <td class="text-center">{{ qty_hours }}</td>
+    <td class="text-center">${{ qty_total }}</td>
+    <td class="text-center text-bold">$ {{ payment }}</td>
+  </tr>
+  <tr data-entry="{{ name }}">
+    <td style='background:#999'></td>
+    <td style='background:#999'></td>
+    <td style='background:#999'></td>
+    <td style='background:#999'></td>
+    <td style='background:#999'></td>
+    <td style='background:#999'></td>
+  </tr>
+  {{/each}}
+  </tbody>
+
+</table>

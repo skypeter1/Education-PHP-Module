@@ -1,0 +1,99 @@
+#header { height: 43px; position: relative; margin: 0 18px 18px 18px; }body {background: #fafafa url('img/header-bg.png') repeat-x top center;}
+#header #navigation { margin: 0 200px 0 200px; position:relative; top: 5px;}
+#user-button { position:absolute; right: 70px; top: 10px; text-align:left;}
+#user-button .username {text-align:left;}
+#header h1 { line-height: 42px; color:white; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-rendering: optimizelegibility;         font-weight: 300; font-size: 18px; position:absolute; left:0;}
+table .center { text-align:center;}
+table .right { text-align:right;}
+.form-search { padding: 4px; margin-bottom: 14px;}
+.table_controls { text-align: right; position:relative; top: 5px;}
+.paginator_label { line-height: 34px; font-weight: 300; }
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd)
+th {background-color: #f2f2f2;}
+.table-striped tbody tr:hover td {background-color:#e8e8e8;}
+#main_container {clear:both;}
+
+.control-group span.help-inline {float:left; margin-left:5px;margin-top:3px}
+.control-group .controls {float:left; margin-left:15px}
+
+.order, .tableorder {
+    display:block;  
+}
+
+.order i, .tableorder i {
+    display:none;
+}
+
+.order.order-desc i.icon-chevron-down, .header.headerSortDown i.icon-chevron-down {
+    display:inline-block;
+}
+
+.header {
+    cursor:pointer;
+}
+
+.order.order-asc i.icon-chevron-up, .header.headerSortUp i.icon-chevron-up {
+    display:inline-block;
+}
+
+.order.order-asc:hover i.icon-chevron-up {
+    display:none;
+}
+
+.order.order-asc:hover i.icon-chevron-down {
+    display:inline-block;
+}
+
+.order.order-desc:hover i.icon-chevron-down {
+    display:none;
+}
+
+.order.order-desc:hover i.icon-chevron-up {
+    display:inline-block;
+}
+
+#pagination ul, #pagination span {
+    float:left;
+}
+
+#pagination ul {
+    margin-left:15px;
+}
+
+#pagination {
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+#app_loader {
+    padding:5px;
+    padding-left:20px;
+    padding-right:20px;
+    font-size:1.1em;
+    font-weight:normal;
+    -webkit-border-radius:0px 0px 5px 5px;
+    -moz-border-radius:0px 0px 5px 5px;
+    border-radius:0px 0px 5px 5px;
+}
+
+#app_loader:hover {
+    background:#F89406;
+}
+
+.hidden {
+        display:none;
+}
+
+ul.nav li.active i {
+    background-image:url("img/glyphicons-halflings-white.png");
+}
+
+div.input-prepend input {
+   width:183px;
+}
+
+div.form-column {
+   float:left;
+   margin-right:50px;
+}

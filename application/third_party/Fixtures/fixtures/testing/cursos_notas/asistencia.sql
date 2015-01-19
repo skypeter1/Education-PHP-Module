@@ -1,0 +1,16 @@
+INSERT INTO `{db_name}`.`asistencia` (`sesion`, `alumno`, `estado`, `observaciones`) VALUES
+(3, 12, 'No asistio', ''),
+(3, 11, 'Asistio', ''),
+(3, 10, 'Asistio', ''),
+(3, 9, 'Asistio', ''),
+(3, 7, 'Asistio', ''),
+(2, 12, 'Asistio', ''),
+(2, 11, 'Llego tarde', ''),
+(2, 10, 'Asistio', ''),
+(2, 9, 'Asistio', ''),
+(2, 7, 'Asistio', ''),
+(1, 12, 'Se fue temprano', ''),
+(1, 11, 'Se fue temprano', ''),
+(1, 10, 'Asistio', ''),
+(1, 9, 'Asistio', ''),
+(1, 7, 'Asistio', '');
